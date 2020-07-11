@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./style.css";
 
 function Jumbotron() {
     return (
         <div className="jumbotron jumbotron-fluid bg-primary">
             <div className="container">
-                <h1 className="display-4 text-center text-white">All The Employees</h1>
+                <h1 className="display-4 text-center text-white" id="employeeHeader">All The Employees</h1>
             </div>
         </div>
     );
