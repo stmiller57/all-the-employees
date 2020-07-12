@@ -1,8 +1,8 @@
 import React from 'react'
 
-function EmployeeTable() {
+const EmployeeTable = () => {
     return (
-        <table className="table table-striped table-dark">
+        <table className="table table-striped table-success text-center">
             <thead>
                 <tr>
                     <th>Name</th>
