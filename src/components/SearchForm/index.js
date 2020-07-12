@@ -6,11 +6,11 @@ function SearchForm(props) {
         <div className="row justify-content-md-center">
             <form className="col-md-auto">
                 <input className="form-control form-control-lg"
-                    value={props.search}
                     onChange={props.handleInputChange}
-                    type="text"
+                    value={props.value}
                     name="search"
                     id="search"
+                    type="text"
                     placeholder="Enter employee name">
                 </input>
             </form>

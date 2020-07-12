@@ -1,15 +1,26 @@
-import React from 'react';
-import Jumbotron from './components/Jumbotron/index.js';
-import SearchForm from './components/SearchForm/index.js';
+import React, { Component } from 'react';
+import Jumbotron from './components/Jumbotron';
+import SearchForm from './components/SearchForm';
+import EmployeeTable from './components/EmployeeTable';
 
 
-function App() {
-  return (
-    <div>
-      <Jumbotron />
-      <SearchForm />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      employees: []
+    }
+  }
+  render() {
+    return (
+      <div>
+        <Jumbotron />
+        <SearchForm />
+        <EmployeeTable />
+
+      </div>
+    );
+  }
 }
 
 export default App;
