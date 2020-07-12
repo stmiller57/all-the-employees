@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Jumbotron from './components/Jumbotron';
 import SearchForm from './components/SearchForm';
 import EmployeeTable from './components/EmployeeTable';
+import API from "./utils/API";
 
 
 class App extends Component {
@@ -9,7 +10,15 @@ class App extends Component {
     super(props);
     this.state = {
       employees: []
-    }
+    };
+  }
+
+  componentDidMount() {
+    API.getEmployees().then((res) =>
+      this.setState({
+        employees: res.data.results,
+      })
+    );
   }
 
   render() {
@@ -17,7 +26,7 @@ class App extends Component {
       <div>
         <Jumbotron />
         <SearchForm />
-        <EmployeeTable />
+        <EmployeeTable employees={this.state.employees} />
 
       </div>
     );
