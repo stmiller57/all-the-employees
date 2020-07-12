@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// Exports an object of 50 random users to build employee list
+// Exports an object of random users to build employee list
 
 export default {
-    getUsers: () => {
+    getEmployees: () => {
         return axios.get("https://randomuser.me/api/?results=50&nat=us");
     }
 };
