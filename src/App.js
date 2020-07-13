@@ -5,14 +5,16 @@ import EmployeeTable from './components/EmployeeTable';
 import API from "./utils/API";
 
 
+// Set the state
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      employees: []
+      employees: [],
     };
   }
 
+  // Pulling user data from randomuser API
   componentDidMount() {
     API.getEmployees().then((res) =>
       this.setState({
@@ -21,6 +23,7 @@ class App extends Component {
     );
   }
 
+  // Components that are rendered
   render() {
     return (
       <div>

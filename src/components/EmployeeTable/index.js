@@ -11,7 +11,6 @@ function EmployeeTable({ employees }) {
                     <th>Location</th>
                     <th>Phone</th>
                     <th>Email</th>
-
                 </tr>
             </thead>
             <tbody className="text-center" id="bodyText">
