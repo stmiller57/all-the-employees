@@ -26,7 +26,6 @@ You can also find the deployed application on Heroku:
 
 https://whispering-ocean-52911.herokuapp.com/
 
-
 ## Installation
 
 Run `npm install` to include all necessary dependencies. 
