@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       employees: [],
-      // filteredEmployees: []
+      filteredEmployees: []
     };
   }
 
@@ -21,27 +21,28 @@ class App extends Component {
     API.getEmployees().then((res) =>
       this.setState({
         employees: res.data.results,
-        // filteredEmployees: res.data.results,
+        filteredEmployees: res.data.results,
       })
     );
   }
-  // handleInputChange = event => {
-  //   const employees = this.state.employees;
-  //   const input = event.target.value.toLowerCase();
-  //   const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(input) > -1)
-  //   this.setState({
-  //     filteredEmployees
-  //   });
-  // };
+  handleInputChange = event => {
+    event.preventDefault();
+    const employees = this.state.employees;
+    const input = event.target.value.toLowerCase();
+    console.log(input);
+    const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(input) > -1)
+    this.setState({
+      filteredEmployees: filteredEmployees
+    });
+  };
 
   // Components that are rendered
   render() {
     return (
       <div>
         <Jumbotron />
-        <SearchForm />
-        <EmployeeTable employees={this.state.employees} />
-        {/* filteredEmployees={this.state.filteredEmployees}  */}
+        <SearchForm handleInputChange={this.handleInputChange} />
+        <EmployeeTable employees={this.state.filteredEmployees} />
       </div>
     );
   }

@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function SearchForm(props) {
+function SearchForm({ handleInputChange }) {
     return <div className="container">
         <div className="row justify-content-md-center">
-            <form className="col-md-auto">
+            <form onSubmit={e => { e.preventDefault(); }}
+                className="col-md-auto">
                 <input className="form-control form-control-lg"
-                    onChange={props.handleInputChange}
-                    value={props.value}
+                    onChange={e => handleInputChange(e)}
                     name="search"
                     id="search"
                     type="text"
